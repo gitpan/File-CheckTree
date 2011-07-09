@@ -4,7 +4,7 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
@@ -13,7 +13,7 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Larry Wall <larry@wall.org>, Paul Grassie <grassie@perl.com>, The Perl 5 Porters',
   'BUILD_REQUIRES' => {},
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'File-CheckTree',
   'EXE_FILES' => [],
@@ -24,7 +24,7 @@ my %WriteMakefileArgs = (
     'Exporter' => '0',
     'File::Spec' => '0'
   },
-  'VERSION' => '4.4',
+  'VERSION' => '4.41',
   'test' => {
     'TESTS' => 't/*.t'
   }
@@ -46,6 +46,9 @@ unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
 
 delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
   unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
+
+$WriteMakefileArgs{INSTALLDIRS} = 'perl'
+    if $] >= 5.009005 && $] <= 5.011000;
 
 WriteMakefile(%WriteMakefileArgs);
 
