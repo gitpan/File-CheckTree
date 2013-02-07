@@ -9,24 +9,25 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'run many filetest checks on a tree',
-  'AUTHOR' => 'Larry Wall <larry@wall.org>, Paul Grassie <grassie@perl.com>, The Perl 5 Porters',
-  'BUILD_REQUIRES' => {},
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "ABSTRACT" => "run many filetest checks on a tree",
+  "AUTHOR" => "Larry Wall <larry\@wall.org>, Paul Grassie <grassie\@perl.com>, The Perl 5 Porters",
+  "BUILD_REQUIRES" => {},
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'File-CheckTree',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'File::CheckTree',
-  'PREREQ_PM' => {
-    'Cwd' => '0',
-    'Exporter' => '0',
-    'File::Spec' => '0'
+  "DISTNAME" => "File-CheckTree",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "File::CheckTree",
+  "PREREQ_PM" => {
+    "Cwd" => 0,
+    "Exporter" => 0,
+    "File::Spec" => 0,
+    "if" => 0
   },
-  'VERSION' => '4.41',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "4.42",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
